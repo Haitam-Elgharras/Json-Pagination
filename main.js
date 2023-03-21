@@ -113,7 +113,7 @@ let fetchPosts = async (number) => {
     return myData;
   });
   // let i = 0;
-  for (let j = number * 5 - 4; j < number * 5 + 1; j++) {
+  for (let j = number * 5 - 5; j < number * 5; j++) {
     console.log(j);
     let post = posts[j];
     const { userId, id, title, body: content } = post;

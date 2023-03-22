@@ -93,6 +93,9 @@ function createPagination(totalPages, page) {
 
 const mainElement = document.querySelector(".myPagination");
 let fetchPosts = async (number) => {
+  document.body.style = "background-color:rgb(32, 178, 170, 0)";
+  mainElement.style = "background-color:rgb(32, 178, 170, 0)";
+
   mainElement.innerHTML = "";
   let posts = await fetch("https://jsonplaceholder.typicode.com/posts").then(
     async (response) => {
@@ -114,7 +117,7 @@ let fetchPosts = async (number) => {
   });
   // let i = 0;
   for (let j = number * 5 - 5; j < number * 5; j++) {
-    console.log(j);
+    // console.log(j);
     let post = posts[j];
     const { userId, id, title, body: content } = post;
     for (let i = 0; i < users.length; i++) {
@@ -123,7 +126,7 @@ let fetchPosts = async (number) => {
         break;
       }
     }
-    var mainDivComments = "<div>";
+    var mainDivComments = "<div >";
     let allComments = () => {
       for (let i = 0; i < comments.length; i++) {
         if (post.id == comments[i].postId) {
@@ -139,7 +142,7 @@ let fetchPosts = async (number) => {
     };
     allComments();
 
-    mainElement.innerHTML += `<div class="card" style="width: 50rem; background-color: #fff ; margin : 10px auto;padding:0 10px 10px">
+    mainElement.innerHTML += `<div class="card" style="max-width: 50rem; background-color: #fff ; margin : 10px auto;padding:0 10px 10px">
     <img src="https://picsum.photos/800/300?${id}" class="card-img-top" alt="...">
     <div class="card-body">
     <h3 class="card-title" >${userName}</h3>
@@ -158,6 +161,8 @@ let fetchPosts = async (number) => {
  
     </div>`;
   }
+  mainElement.style = "background-color:rgb(32, 178, 170, 0.3)";
+  document.body.style = "background-color:rgb(32, 178, 170, 0.09)";
 };
 
 const hidAnimation = () => {

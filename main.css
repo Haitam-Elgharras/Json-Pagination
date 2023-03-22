@@ -11,18 +11,22 @@ ul {
 body {
   position: relative;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 /* strat pagination */
 .myPagination {
   height: fit-content;
   padding: 10px;
-  background-color: rgb(32, 178, 170, 0.2);
   position: relative;
 }
 .pagination {
   position: fixed;
   bottom: 40px;
-  margin: 0 auto;
-  width: 100%;
+  max-width: 468px;
   z-index: 99;
 }
 .pagination ul {
@@ -122,5 +126,21 @@ body {
 @media (max-width: 780px) {
   .card-img-top {
     width: 100% !important;
+  }
+  .pagination {
+    width: 400px;
+  }
+  .pagination ul {
+    width: 100%;
+  }
+  /* .pagination ul li.numb {
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+  } */
+}
+@media (max-width: 480px) {
+  .pagination {
+    width: 350px;
   }
 }

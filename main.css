@@ -119,3 +119,8 @@ body {
     transform: translateY(-20px);
   }
 }
+@media (max-width: 780px) {
+  .card-img-top {
+    width: 100% !important;
+  }
+}
